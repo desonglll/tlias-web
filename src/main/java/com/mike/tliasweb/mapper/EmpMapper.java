@@ -40,4 +40,7 @@ public interface EmpMapper {
     Emp findById(Integer id);
 
     public void update(Emp emp);
+
+    @Select("select * from emp where username = #{username} and password = #{password}")
+    Emp login(String username, String password);
 }
